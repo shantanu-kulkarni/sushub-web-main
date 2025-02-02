@@ -1,0 +1,56 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log  # Ignore all log files
+
+# local env files
+.env*.local
+.env.development
+.env.production
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Ignore specific JSX and JS files
+/src/components/example.jsx
+/src/utils/helper.js
+/src/app/schema/Organizer.jsx
+/src/app/schema/Project.jsx
+/src/app/schema/People.jsx
+/src/app/schema/User.jsx
+/src/components/global/navbar/NavbarLoginButton.jsx
+
+# Ignore all JSX and JS files inside a specific folder
+/src/components/pages/project/project-create-new/*.jsx
+src/components/pages/people/new-organizer/organizer-form/*.jsx
+/src/components/global/cookies/*.jsx
+
+# Ignore Firebase config file
+firebase.config.js

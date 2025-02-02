@@ -1,0 +1,4 @@
+.custom-pagination-selector ul > span {
+  @apply bg-black;
+  @apply text-white;
+}

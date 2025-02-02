@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  overflow-x: hidden; /* Internet Explorer 11 */
+}
+
+/* Hide vertical scrollbar for Webkit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  width: 0.0rem; /* Changed from 0.25 initially */
+}
+
+/* Hide horizontal scrollbar for Webkit browsers (Chrome, Safari) */
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    overflow-x: hidden;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__viewport {
+  display: flex;
+  touch-action: pan-y;
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  gap: 12px;
+}
+.embla__slide {
+  min-width: 33%;
+}
+.truncate-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+.circle:active {
+  cursor: grabbing;
+}
+
+@layer utilities {
+  .global-title {
+    @apply w-full xs:w-full s:w-full md:w-2/3 text-black flex items-center text-xl xs:text-xl s:text-xl md:text-3xl font-bold pt-2 xs:pt-2 md:pt-4;
+  }
+  .global-title-description {
+    @apply text-black/30 flex items-center text-sm xs:text-sm s:text-sm md:text-medium font-semibold pb-4 pt-1 w-full xs:w-full md:w-2/3;
+  }
+  .global-subtitle {
+    @apply text-black font-semibold text-lg xs:text-lg md:text-xl;
+  }
+  .global-subtitle-description {
+    @apply text-black/30 flex items-center text-sm xs:text-sm md:text-medium font-semibold pb-4 pt-1 w-full xs:w-full md:w-2/3;
+  }
+  .global-title-layout{
+    @apply flex flex-col xs:flex-col md:flex-row;
+  }
+  .global-element-layout{
+    @apply w-full xs:w-full s:w-full md:w-1/3 flex justify-end items-center py-4;
+  }
+  .global-box-layout{
+    @apply w-full xs:w-full lg:w-5/6 xl:w-2/3 px-2 xs:px-4
+  }
+}
+
